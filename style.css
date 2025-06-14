@@ -1,0 +1,354 @@
+/* --- Podstawowe Ustawienia --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5dc;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column; /* ZMIANA: Układa elementy (treść i stopkę) pionowo */
+    align-items: center; /* ZMIANA: Centruje te elementy w poziomie */
+    padding: 20px 0 0; /* ZMIANA: Usunięto boczne paddingi, by stopka mogła być na 100% szerokości */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Nagłówek i Nawigacja --- */
+header {
+    background-color: #eaddc5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.logo img {
+    height: 50px;
+    display: block;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* --- Główna Treść --- */
+main {
+    padding: 100px 20px 60px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    gap: 40px;
+    flex-wrap: wrap; 
+}
+
+/* --- Karty Produktów --- */
+.card {
+    background-color: #eaddc5;
+    border-radius: 25px;
+    padding: 35px;
+    width: 340px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-width: 100%;
+    height: 300px;
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* === NOWE, ESTETYCZNE STYLE PRZYCISKU === */
+.card-button {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #f5f5dc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- Style dla podstrony (np. alkohol.html) --- */
+.subpage-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.subpage-content .image-container {
+    flex-basis: 30%;
+    background-color: #eaddc5;
+    padding: 30px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subpage-content .image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.subpage-content .text-container {
+    flex-basis: 70%;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 25px;
+}
+
+.subpage-content h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.subpage-content h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.subpage-content p, .subpage-content li {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.subpage-content ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.subpage-content ul li {
+    margin-bottom: 10px;
+}
+
+/* --- Style dla podstrony "Gdzie szukać pomocy" --- */
+.page-title-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title-container h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-title-container .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.help-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+}
+
+.help-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.help-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    flex-grow: 1;
+}
+
+.help-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.help-card li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.help-card li::before {
+    content: '✓';
+    color: #a4bf7e;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+}
+
+.help-card .card-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* --- Poprawka dla aktywnego linku w nawigacji --- */
+nav a.active {
+    background-color: #f5f5dc;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+}
+
+nav a.active::after {
+    display: none;
+}
+
+/* --- Style dla Stopki --- */
+
+footer {
+    background-color: #eaddc5;
+    color: #4a4a4a;
+    padding: 50px 0 0;
+    margin-top: 80px;
+    width: 100%; /* Stopka na całą szerokość ekranu */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-column h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.footer-column .disclaimer {
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #000;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #d8cbb8;
+    font-size: 13px;
+    color: #6d6d6d;
+}
